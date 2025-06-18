@@ -43,4 +43,5 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.okhttp)
     implementation(libs.glide)
+    implementation(libs.volley)
 }
