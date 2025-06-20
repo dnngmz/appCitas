@@ -27,15 +27,20 @@ public class pantallaMascotas extends AppCompatActivity {
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
-            if (itemId == R.id.home) {
+            if (itemId == R.id.historial) {
                 Intent intent = new Intent(pantallaMascotas.this, pantallaHistorial.class);
                 startActivity(intent);
             }
             return true;
         });
 
-        binding.AgendarCitas.setOnClickListener(Intent -> {;
+        binding.AgendarCitas.setOnClickListener(Intent -> {
             Intent intent = new Intent(pantallaMascotas.this, pantallaAgendarCitas.class);
+            startActivity(intent);
+        });
+
+        binding.agregarMascota.setOnClickListener(Intent -> {
+            Intent intent = new Intent(pantallaMascotas.this, pantallaAgregarMascotas.class);
             startActivity(intent);
         });
     }
