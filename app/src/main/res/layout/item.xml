@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Main parent layout with rounded corners -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_animal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:radius="12dp"
+    app:cardCornerRadius="28dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal">
+
+        <!-- Left Section -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/my_secondary">
+
+            <ImageView
+                android:id="@+id/image_animal"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+        </FrameLayout>
+
+        <!-- Right Section -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:padding="12dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/my_secondary" />
+
+            <TextView
+                android:id="@+id/tv_species"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginTop="4dp"
+                android:text="Especie"
+                android:paddingLeft="10dp"
+                android:textColor="@color/my_secondary" />
+
+            <!-- New TextView for species value -->
+            <TextView
+                android:id="@+id/tv_species_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tv_species"
+                android:layout_toRightOf="@id/tv_species"
+                android:layout_marginLeft="8dp"
+                android:text=""
+                android:textColor="@color/my_secondary" />
+
+            <TextView
+                android:id="@+id/tv_race"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_species"
+                android:layout_marginTop="4dp"
+                android:text="Raza"
+                android:paddingLeft="10dp"
+                android:textColor="@color/my_secondary" />
+
+            <!-- New TextView for race value -->
+            <TextView
+                android:id="@+id/tv_race_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tv_race"
+                android:layout_toRightOf="@id/tv_race"
+                android:layout_marginLeft="8dp"
+                android:text=""
+                android:textColor="@color/my_secondary" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_race"
+                android:layout_marginTop="4dp"
+                android:text="Edad"
+                android:paddingLeft="10dp"
+                android:textColor="@color/my_secondary" />
+
+            <!-- New TextView for age value -->
+            <TextView
+                android:id="@+id/tv_age_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tv_age"
+                android:layout_toRightOf="@id/tv_age"
+                android:layout_marginLeft="8dp"
+                android:text=""
+                android:textColor="@color/my_secondary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:gravity="end">
+
+                <ImageButton
+                    android:id="@+id/btn_edit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:contentDescription="Editar"
+                    app:tint="@color/my_secondary" />
+
+                <ImageButton
+                    android:id="@+id/btn_delete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@android:drawable/ic_menu_delete"
+                    android:contentDescription="Eliminar"
+                    app:tint="@color/my_secondary" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

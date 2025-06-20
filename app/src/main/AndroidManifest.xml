@@ -16,6 +16,16 @@
         android:theme="@style/Theme.AppCitas"
         tools:targetApi="31">
         <activity
+            android:name=".pantallaHistorial"
+            android:exported="false" />
+        <activity
+            android:name=".pantallaAgendarCitas"
+            android:exported="false" />
+        <activity
+            android:name=".pantallaMascotas"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".pantallaRegistro"
             android:exported="false" />
         <activity

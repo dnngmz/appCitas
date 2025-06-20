@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
     }
     public void realizarLogin(String email, String password) {
         // Crear objeto JSON con los datos del login

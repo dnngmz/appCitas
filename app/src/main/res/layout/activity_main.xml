@@ -15,6 +15,7 @@
         android:alpha="0.7"/>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -33,7 +34,7 @@
             android:text="Vet App"
             android:textColor="@color/white"
             android:textSize="32sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -159,7 +160,11 @@
                 android:layout_height="10dp" />
 
 
+
+
         </LinearLayout>
+
+
 
     </androidx.cardview.widget.CardView>
 

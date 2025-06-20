@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:hint="Tu nombre completo"
+                android:alpha="0.7"
                 android:inputType="textEmailAddress"
                 />
 
@@ -75,6 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
+                android:alpha="0.7"
                 android:hint="Tu dirección de correo electrónico"
                 android:inputType="textEmailAddress"
                 />
@@ -97,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:hint="Contraseña"
+                android:alpha="0.7"
                 android:inputType="textPassword" />
 
             <View
@@ -115,6 +118,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
+                android:alpha="0.7"
                 android:hint="Confirma tu contraseña"
                 android:inputType="textPassword" />
 
