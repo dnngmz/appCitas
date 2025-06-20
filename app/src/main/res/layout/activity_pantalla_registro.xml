@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pantallaRegistro">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/my_primary"/>
+    tools:context=".activities.pantallaRegistro">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        >
+        android:layout_alignParentTop="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,11 +48,11 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/editTextNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:hint="Tu nombre completo"
-                android:alpha="0.7"
                 android:inputType="textEmailAddress"
                 />
 
@@ -76,9 +73,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
-                android:alpha="0.7"
                 android:hint="Tu dirección de correo electrónico"
                 android:inputType="textEmailAddress"
+                />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="Teléfono"
+                android:textColor="@color/my_primary"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/editTextTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:hint="Tu número de teléfono"
+                android:inputType="phone"
                 />
 
             <View
@@ -99,7 +116,6 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:hint="Contraseña"
-                android:alpha="0.7"
                 android:inputType="textPassword" />
 
             <View
@@ -115,10 +131,10 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/editTextConfirmarPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
-                android:alpha="0.7"
                 android:hint="Confirma tu contraseña"
                 android:inputType="textPassword" />
 
@@ -127,21 +143,20 @@
                 android:layout_height="20dp" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRegistrar"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Continuar"
                 app:cornerRadius="32dp"
+                app:rippleColor="@color/my_primary_dark"
                 android:backgroundTint="@color/my_secondary"/>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="155dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -150,21 +165,18 @@
                     android:text="¿Ya tienes una cuenta?"/>
 
                 <TextView
+                    android:id="@+id/tvIniciarSesion"
+                    android:paddingLeft="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:alpha="0.7"
-                    android:textColor="@color/my_primary"
-                    android:text="Inicia sesion"/>
-
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="Inicia sesion"
+                    android:textColor="@drawable/registrarse_selector"/>
 
             </LinearLayout>
-
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
-
-</RelativeLayout>
-
-
-
-
+</ScrollView>

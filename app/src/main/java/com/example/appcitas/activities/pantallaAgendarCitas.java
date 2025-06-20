@@ -1,10 +1,11 @@
-package com.example.appcitas;
+package com.example.appcitas.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appcitas.R;
 import com.example.appcitas.databinding.ActivityPantallaAgendarCitasBinding;
 
 public class pantallaAgendarCitas extends AppCompatActivity {

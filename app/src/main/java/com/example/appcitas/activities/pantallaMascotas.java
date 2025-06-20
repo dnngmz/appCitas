@@ -1,4 +1,4 @@
-package com.example.appcitas;
+package com.example.appcitas.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,18 +8,19 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.appcitas.databinding.ActivityPantallaMasctoasBinding;
+import com.example.appcitas.R;
+import com.example.appcitas.databinding.ActivityPantallaMascotasBinding;
 
 public class pantallaMascotas extends AppCompatActivity {
 
-    ActivityPantallaMasctoasBinding binding;
+    ActivityPantallaMascotasBinding binding;
 //    FloatingActionButton agregarMascota = binding.agregarMascota;
 //    agregarMascota.setImageTintList(ContextCompat.getColorStateList(this, R.color.my_secondary));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityPantallaMasctoasBinding.inflate(getLayoutInflater());
+        binding = ActivityPantallaMascotasBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.bottomNavigationView.setBackground(null);

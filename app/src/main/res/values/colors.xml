@@ -5,5 +5,7 @@
 
 
     <color name="my_primary">#58C7D2</color>
+    <color name="my_primary_dark">#40a4ae</color>
     <color name="my_secondary">#FFD374</color>
+    <color name="my_secondary_dark">#eab43f</color>
 </resources>
