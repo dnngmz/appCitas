@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/home"
         android:title="Mascotas"
-        android:icon="@drawable/dog_paw"/>
-
+        android:icon="@drawable/dog_paw_white"/>
     <item
-        android:id="@+id/citas"
+        android:id="@+id/espacio"
         android:title=""
-        android:enabled="true"/>
-
+        android:enabled="false"/>
     <item
         android:id="@+id/historial"
         android:title="Historial"
-        android:icon="@drawable/rewind_clock"
-        android:iconTint="@color/my_secondary"/>
-
+        android:icon="@drawable/rewind_clock"/>
 </menu>

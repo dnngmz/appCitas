@@ -1,6 +1,7 @@
 package com.example.appcitas.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -34,6 +36,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     EditText emailInput, passwordInput;
@@ -91,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Corrige los errores", Toast.LENGTH_SHORT).show();
                 return;
             }
-
+            email = email.trim().toLowerCase();
+            password = password.trim();
             realizarLogin(email, password);
         });
 
@@ -148,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             return;
         }
+        Log.d("LoginRequest", "JSON enviado: " + loginData.toString());
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
@@ -155,11 +161,22 @@ public class MainActivity extends AppCompatActivity {
                 loginData,
                 response -> {
                     try {
-                        boolean success = response.getBoolean("success");
+                        if (response.has("success") && response.getBoolean("success")) {
+                            Log.d("RESPUESTA_LOGIN", response.toString());
+                            JSONObject clienteObj = response.getJSONObject("data");
+                            int clienteId = clienteObj.getInt("idCliente");
 
-                        if (success) {
+                            SharedPreferences sharedPreferences = getSharedPreferences("VetAppPrefs", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putInt("clienteId", clienteId);
+                            editor.apply(); // o .commit()
+
                             Snackbar.make(findViewById(android.R.id.content), "Inicio de sesión exitoso", Snackbar.LENGTH_SHORT).show();
-                            startActivity(new Intent(this, pantallaMascotas.class));
+
+                            Intent intent = new Intent(this, pantallaMascotas.class);
+                            startActivity(intent);
+                            finish();
+
                         } else {
                             String message = response.getString("message");
                             Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG).show();
@@ -190,7 +207,14 @@ public class MainActivity extends AppCompatActivity {
                                 .show();
                     }
                 }
-        );
+        ) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "application/json");
+                return headers;
+            }
+        };
 
         requestQueue.add(request);
     }

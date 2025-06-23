@@ -14,6 +14,7 @@
         android:padding="28dp">
 
         <TextView
+            android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Registrar mascota"
@@ -34,6 +35,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
@@ -55,6 +57,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/etEspecie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
@@ -76,6 +79,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/etRaza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
@@ -97,6 +101,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/etEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
@@ -110,41 +115,32 @@
             android:layout_height="10dp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegistrarMascota"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Registrar mascota"
             app:cornerRadius="32dp"
+            app:rippleColor="@color/my_secondary_dark"
             android:backgroundTint="@color/my_primary"/>
 
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Cancelar"
+                android:clickable="true"
+                android:focusable="true"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@drawable/registrarse_selector" />
+        </RelativeLayout>
+
     </LinearLayout>
-
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/my_secondary"
-        android:id="@+id/bottomAppBar"
-        android:layout_gravity="bottom"
-        app:fabCradleMargin="10dp"
-        app:fabCradleRoundedCornerRadius="50dp">
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bottomNavigationView"
-            android:layout_marginEnd="20dp"
-            app:labelVisibilityMode="labeled"
-            android:background="@android:color/transparent"
-            app:menu="@menu/bottom_menu"/>
-
-
-    </com.google.android.material.bottomappbar.BottomAppBar>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="153dp"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/calendar"
-        android:id="@+id/AgendarCitas"
-        app:layout_anchor="@id/bottomAppBar"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

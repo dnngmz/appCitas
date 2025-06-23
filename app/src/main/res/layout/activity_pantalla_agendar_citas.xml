@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,184 +8,191 @@
     android:layout_height="match_parent"
     tools:context=".activities.pantallaAgendarCitas">
 
-    <LinearLayout
+    <!-- Scroll para todo el contenido principal -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="28dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Agendar cita"
-            android:textColor="@color/my_primary"
-            android:textSize="32sp"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="30dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:text="Seleccionar mascota"
-            android:textColor="@color/my_primary"
-            android:textStyle="bold" />
-
-        <EditText
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="100dp"
+        android:layout_gravity="top">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:hint="Selecciona una mascota"
-            android:alpha="0.7"
-            android:inputType="textEmailAddress"
-            />
+            android:orientation="vertical"
+            android:padding="28dp">
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agendar cita"
+                android:textColor="@color/my_primary"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:text="Seleccionar veterinario"
-            android:textColor="@color/my_primary"
-            android:textStyle="bold" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:hint="Selecciona un veterinario"
-            android:alpha="0.7"
-            android:inputType="textEmailAddress"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="Seleccionar mascota"
+                android:textColor="@color/my_primary"
+                android:textStyle="bold" />
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+            <Spinner
+                android:id="@+id/spinnerMascotas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown"
+                android:backgroundTint="@color/my_primary" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:text="Especialidad"
-            android:textColor="@color/my_primary"
-            android:textStyle="bold" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:hint="Esepecialidad del veterinario"
-            android:alpha="0.7"
-            android:inputType="textEmailAddress"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="Seleccionar veterinario"
+                android:textColor="@color/my_primary"
+                android:textStyle="bold" />
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+            <Spinner
+                android:id="@+id/spinnerVeterinarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown"
+                android:backgroundTint="@color/my_primary" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:text="Seleccionar fecha"
-            android:textColor="@color/my_primary"
-            android:textStyle="bold" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:hint="Selecciona una fecha"
-            android:alpha="0.7"
-            android:inputType="textEmailAddress"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="Especialidad"
+                android:textColor="@color/my_primary"
+                android:textStyle="bold" />
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+            <EditText
+                android:id="@+id/etEspecialidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:enabled="false"
+                android:hint="Especialidad"
+                android:alpha="0.7"
+                android:inputType="text"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:text="Seleccionar hora"
-            android:textColor="@color/my_primary"
-            android:textStyle="bold" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:hint="Selecciona una hora"
-            android:alpha="0.7"
-            android:inputType="textEmailAddress"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="Seleccionar fecha"
+                android:textColor="@color/my_primary"
+                android:textStyle="bold" />
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+            <EditText
+                android:id="@+id/etFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:hint="Selecciona una fecha"
+                android:alpha="0.7"
+                android:inputType="textEmailAddress"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:text="Motivo"
-            android:textColor="@color/my_primary"
-            android:textStyle="bold" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:hint="Describe el motivo de tu cita"
-            android:alpha="0.7"
-            android:inputType="textEmailAddress"
-            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="Seleccionar hora"
+                android:textColor="@color/my_primary"
+                android:textStyle="bold" />
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+            <EditText
+                android:id="@+id/etHora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:hint="Selecciona una hora"
+                android:alpha="0.7"
+                android:inputType="textEmailAddress"
+                />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Confirmar cita"
-            app:cornerRadius="32dp"
-            android:backgroundTint="@color/my_primary"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:text="Motivo"
+                android:textColor="@color/my_primary"
+                android:textStyle="bold" />
 
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </FrameLayout>
+            <EditText
+                android:id="@+id/etMotivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="3"
+                android:hint="Describe el motivo de tu cita"
+                android:gravity="top|start"
+                android:inputType="textMultiLine" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmarCita"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Confirmar cita"
+                app:cornerRadius="32dp"
+                android:backgroundTint="@color/my_primary"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/my_secondary"
+        android:backgroundTint="@color/my_primary"
         android:id="@+id/bottomAppBar"
         android:layout_gravity="bottom"
+        android:layout_marginBottom="-20dp"
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="50dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/bottomNavigationView"
-            android:layout_marginEnd="20dp"
-            app:labelVisibilityMode="labeled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
             android:background="@android:color/transparent"
+            app:itemIconTint="@color/cita_item_color"
+            app:itemTextColor="@color/cita_item_color"
+            app:itemIconSize="30dp"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="0dp"
             app:menu="@menu/bottom_menu"/>
-
-
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -192,6 +200,7 @@
         android:layout_height="153dp"
         android:backgroundTint="@color/white"
         android:src="@drawable/calendar"
+        app:tint="@color/my_primary"
         android:id="@+id/AgendarCitas"
         app:layout_anchor="@id/bottomAppBar"/>
 

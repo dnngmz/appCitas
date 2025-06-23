@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Main parent layout with rounded corners -->
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/item_animal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="10dp"
     android:radius="12dp"
-    app:cardCornerRadius="28dp">
+    app:cardCornerRadius="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,8 +47,9 @@
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre"
-                android:textSize="16sp"
+                android:text="Annie"
+                android:paddingLeft="10dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/my_secondary" />
 
@@ -54,7 +59,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_name"
                 android:layout_marginTop="4dp"
-                android:text="Especie"
+                android:text="Especie:"
+                android:textStyle="bold"
                 android:paddingLeft="10dp"
                 android:textColor="@color/my_secondary" />
 
@@ -65,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/tv_species"
                 android:layout_toRightOf="@id/tv_species"
-                android:layout_marginLeft="8dp"
-                android:text=""
+                android:layout_marginLeft="5dp"
+                android:text="Gato"
                 android:textColor="@color/my_secondary" />
 
             <TextView
@@ -75,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_species"
                 android:layout_marginTop="4dp"
-                android:text="Raza"
+                android:text="Raza:"
+                android:textStyle="bold"
                 android:paddingLeft="10dp"
                 android:textColor="@color/my_secondary" />
 
@@ -86,8 +93,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/tv_race"
                 android:layout_toRightOf="@id/tv_race"
-                android:layout_marginLeft="8dp"
-                android:text=""
+                android:layout_marginLeft="5dp"
+                android:text="Mestiza"
                 android:textColor="@color/my_secondary" />
 
             <TextView
@@ -96,7 +103,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_race"
                 android:layout_marginTop="4dp"
-                android:text="Edad"
+                android:text="Edad:"
+                android:textStyle="bold"
                 android:paddingLeft="10dp"
                 android:textColor="@color/my_secondary" />
 
@@ -107,8 +115,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@id/tv_age"
                 android:layout_toRightOf="@id/tv_age"
-                android:layout_marginLeft="8dp"
-                android:text=""
+                android:layout_marginLeft="5dp"
+                android:text="4 años"
                 android:textColor="@color/my_secondary" />
 
             <LinearLayout
