@@ -41,7 +41,7 @@
                 android:textColor="@color/my_secondary" />
 
             <TextView
-                android:id="@+id/tv_mascota_value"
+                android:id="@+id/tvMascota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -67,7 +67,7 @@
                 android:textColor="@color/my_secondary" />
 
             <TextView
-                android:id="@+id/tv_veterinario_value"
+                android:id="@+id/tvVeterinario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -84,16 +84,16 @@
             android:layout_marginTop="4dp"
             android:layout_marginLeft="15dp">
             <TextView
-                android:id="@+id/tv_label_edad"
+                android:id="@+id/tv_label_estado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edad:"
+                android:text="Estado:"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="@color/my_secondary" />
 
             <TextView
-                android:id="@+id/tv_edad_value"
+                android:id="@+id/tvEstado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -119,7 +119,7 @@
                 android:textColor="@color/my_secondary" />
 
             <TextView
-                android:id="@+id/tv_motivo_value"
+                android:id="@+id/tvMotivo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"

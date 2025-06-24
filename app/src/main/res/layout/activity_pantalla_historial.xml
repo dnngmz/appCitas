@@ -10,11 +10,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="28dp">
 
         <TextView
+            android:id="@+id/tv_historial_titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Historial de citas"
@@ -23,39 +24,58 @@
             android:textStyle="bold" />
 
         <View
-            android:layout_width="wrap_content"
-            android:layout_height="30dp" />
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
 
+        <!-- Mensaje de "no hay citas" -->
+        <TextView
+            android:id="@+id/tvSinCitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No tienes citas registradas"
+            android:textColor="@color/my_secondary"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:visibility="gone" />
+
+        <!-- RecyclerView para mostrar citas -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            tools:listitem="@layout/item_cita" />
     </LinearLayout>
 
     <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/my_secondary"
-        android:id="@+id/bottomAppBar"
         android:layout_gravity="bottom"
+        android:layout_marginBottom="-20dp"
+        android:backgroundTint="@color/my_secondary"
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="50dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/bottomNavigationView"
-            android:layout_marginEnd="20dp"
-            app:labelVisibilityMode="labeled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
+            app:itemIconTint="@color/historial_item_color"
+            app:itemTextColor="@color/historial_item_color"
+            app:itemIconSize="30dp"
             app:menu="@menu/bottom_menu"/>
-
-
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/AgendarCitas"
         android:layout_width="wrap_content"
         android:layout_height="153dp"
-        android:backgroundTint="@color/white"
         android:src="@drawable/calendar"
-        android:id="@+id/AgendarCitas"
+        app:backgroundTint="@color/my_secondary"
+        app:tint="#7e7e7e"
+        app:maxImageSize="28dp"
         app:layout_anchor="@id/bottomAppBar"/>
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
